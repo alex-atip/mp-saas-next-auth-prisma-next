@@ -1,17 +1,10 @@
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
+import RegisterForm from "./register-form";
 import Link from "next/link";
-import Form from "next/form"
-import registerAction from "./registerAction";
 
-export default async function RegisterPage() {
+
+export default function RegisterPage() {
+
   return (
     <>
       <Card className="max-w-sm w-full rounded-2xl mt-12">
@@ -20,25 +13,7 @@ export default async function RegisterPage() {
           <CardDescription>Faça seu cadastro gratuitamente.</CardDescription>
         </CardHeader>
         <CardContent>
-          <Form action={registerAction}>
-            <div>
-              <Label>Nome</Label>
-              <Input type="text" name="name" placeholder="Fulano de Tal" />
-            </div>
-            <div>
-              <Label>Email</Label>
-              <Input type="email" name="email" placeholder="eu@exemplo.com" />
-            </div>
-            <div>
-              <Label>Senha</Label>
-              <Input type="password" name="password" placeholder="********" />
-            </div>
-            <div>
-              <Button className="w-full mt-6" type="submit">
-                Registrar
-              </Button>
-            </div>
-          </Form>
+          <RegisterForm />
         </CardContent>
       </Card>
       <p className="text-sm text-muted-foreground mt-3">
